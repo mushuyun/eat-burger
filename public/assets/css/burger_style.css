@@ -1,23 +1,59 @@
+body{
+  background-image: url("../image/Burger.jpg");
+  background-size:100vw 100vh;
+}
+
+#newburger{
+  width: 200px;
+  height: 30px;
+  color:darkviolet;
+}
+
+#orderPanel{
+  opacity: 0.8;
+  font-size: 20px;
+  font-family: cursive;
+}
+
+#order {
+  margin-top: 30px;
+  background-color: rgb(29, 187, 240);
+  color: #f54009ee;
+  text-align: center;
+  font-size: 1.3em;
+  font-family: cursive;
+}
+.eatburger{
+  color: darkgreen;
+}
+
+#delPanel{
+  color: darkmagenta;
+  opacity: 0.8;
+  font-size: 20px;
+  font-family: cursive;
+}
+
+#pickup {
+  margin-top:30px;
+  background-color: #fae0bd;
+  color: rgb(188, 53, 241);
+  background: opacity 0;
+  text-align: center;
+  font-size: 1.3em;
+}
+
 .jumbotron {
-    background-image: url("../img/burger.jpg");
-    background-repeat: no-repeat;
-    background-position: right;
-    background-color: #000000;
-    color: #ffffff;
-    margin-top: 3%;
-  }
-  #newBurger {
-    color: #5c5c5c;
-  }
-  #leftside {
-    background-color: #5c5c5c;
-    color: white;
-    text-align: center;
-    font-size: 1.3em;
-  }
-  #rightside {
-    background-color: #e49322;
-    color: white;
-    text-align: center;
-    font-size: 1.3em;
-  }
+  color: rgb(139, 79, 0);
+  background-color: #ffffff;
+  opacity: 0.6;
+  background-repeat: no-repeat;
+  background-position: right;
+  margin-top: 3%;
+}
+
+.forBurger{
+  color: rgb(245, 85, 45);
+  font-size: 20px;
+  font-family: cursive ;
+}
