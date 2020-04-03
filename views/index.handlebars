@@ -1,44 +1,77 @@
-<h1>Best Burger! Order Now!</h1>
-<br>
+<div class="container">
 
-<div id = "burgerAll">
-    <h2>Select a burger:</h2>
-    <ul>
-        {{#each burgers}} {{unless this.devoured}}
-        <li>
-            {{this.id}}. {{this.burger_name}}
-            <form action = "/{{this.id}}?_method=PUT" method="POST">
-            <input type="hidden" name="devoured" value="false">
-            <button class="btn btn-primary" type="submit">Eat one</button>
+    <div class="jumbotron">
+        <h1>Order Burger</h1> </h1>
+        
+        <panel>
+            <form class="create-form">
+                <div class="form-group">
+                    <label for="newburger">Order Fresh Burger</label>
+                    {{!-- <input type="text" id="newburger" name="burger"> --}}
+                    <select data-placeholder="" id="newBurger" name="burger">
+                        <option value="Nothing Selected" selected>Please Select a Sandwich</option>
+                        <option value="Hamburger">Hamburger</option>
+                        <option value="CheeseBurger">CheeseBurger</option>
+                        <option value="DoubleBfChz">Double Up (double meat and cheese)</option>
+                        <option value="VeggieBurger">Veggie Burger</option>
+                        <option value="PulledPork">Pulled Pork Sandwich</option>
+                        <option value="ChichenClub">Chicken Club Sandwich</option>
+                        <option value="SteaknChz">Steak and Cheese Sandwich</option>
+                    </select>
+
+                    <button type="submit" class="btn btn-success" id="addburger">
+                        <span class="fa fa-thumbs-up"></span>
+                    </button>
+                </div>
             </form>
-        </li>
-        {{/unless}} {{/each}}
-    </ul>
+        </panel>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading" id="leftside"><strong>Order Your Burger</strong>
+                    <p>Send order to cashier when ready for pick up</p>
+                </div>
+                <div class="panel-body">
 
-</div>
+                    <ul>
+                        {{#each burgers}}
+                        {{#unless devoured}}
 
-<div id="devoured">
-    <h2>Burgers devoured</h2>
+                        <span><strong> {{this.id}} - {{this.burger_name}}</strong></span>
+                        <button type="button" class="eat-burger btn btn-warning" id="eat-burger" data-id="{{this.id}}"
+                            data-newDevoured="{{devour}}"><span class="fa fa-usd"></span></button>
+                        <hr>
+                        {{/unless}}
+                        {{/each}}
+                    </ul>
 
-    <ul>
-        {{each burgers}} {{# if this.devoured}}
-        <li>
-            {{this.id}}. {{this.burger_name}}
-        </li>
-        {{/if}}{{/each}}
-    </ul>
-</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading" id="rightside"><strong>Burger is Ready for Pick Up</strong>
+                    <p>Remove order from pick up when delivered</p>
+                </div>
+                <div class="panel-body">
+                    <ul>
+                        {{#each burgers}}
+                        {{#if devoured}}
+                        <span><strong> {{this.id}} - {{this.burger_name}}</strong></span>
+                        <button type="button" class="delBurge btn btn-danger" id="trashbutton" data-id="{{this.id}}"
+                            data-newDevoured="{{devour}}"><span class="fa fa-trash"></span></button>
+                        <hr>
+                        {{/if}}
+                        {{/each}}
+                    </ul>
 
-<div id="addOne">
-    <h2>Add one to eat:</h2>
 
-    <form class="update" action="/" method="POST">
-        <div class="form-group">
-            <label for="lfname">Burger name:</label> 
-            <input id="lfname" name="burger_name" type="text" />
+
+                </div>
+            </div>
         </div>
 
-        <button class="btn btn-warning"></button>
-    </form>
-
+    </div>
+   
 </div>

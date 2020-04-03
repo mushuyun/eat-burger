@@ -1,6 +1,6 @@
-insert into burgers (burger_name, devoured)
-values ("Incredible meat", false),
-("Giant beef", false),
-("Vege lover", false);
+USE burgers_db;
 
-select * from burgers;
+insert into burgers (burger_name, devoured)
+values ("IncredibleMeat", false),
+("GiantBeef", false),
+("VegeLover", false);
