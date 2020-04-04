@@ -1,12 +1,17 @@
 const mysql = require("mysql");
 
-const connection = mysql.createConnection({
-  host: "localhost",
-  port: 3306,
-  user: "root",
-  password: "Tha,bto7",
-  database: "burgers_db"
-});
+if(process.env.NODE_ENV === "production") {
+  var connection = mysql.createConnection(process.env.JAWSDB);
+} else {
+  const connection = mysql.createConnection({
+    host: "umabrisfx8afs3ja.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    port: 3306,
+    user: "gj6rh45swtd5ki9k",
+    password: "bci81cgsehganpa0",
+    database: "vw47fjrdrcu34zm3"
+  });
+    
+}
 
 connection.connect(function(err) {
   if (err) {
